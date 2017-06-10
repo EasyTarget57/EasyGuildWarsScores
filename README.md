@@ -12,12 +12,11 @@ Unless someone can help set up a better system for a website I'll keep with writ
 # TODO #
 Short term 
 - The calculations to determine average might attacked needs to be fixed.
-- The html template needs to be improved.
+- Improve html template.
 - We need to be able to run it as a jar.
 
 Medium term
 - Save scores to a database (but keep website static).
-- Improve html template.
 - Add support for displaying multiple GWs results.
 - Add a view with average scores over last 5 or 10 GWs.
 - Add a view showing all GWs results of a player.

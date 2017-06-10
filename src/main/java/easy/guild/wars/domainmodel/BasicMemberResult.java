@@ -46,7 +46,7 @@ public class BasicMemberResult {
 	}
 
 	public int getBasePoints() {
-		return (int) Math.floor(Math.pow(Integer.valueOf(getMight()).doubleValue(), 0.47));
+		return (int) Math.floor(Math.pow(Integer.valueOf(getMight()).doubleValue(), 0.47) / 1.33);
 	}
 
 	@Override
