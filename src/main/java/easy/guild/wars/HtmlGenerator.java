@@ -5,14 +5,9 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import org.junit.Test;
-
-import easy.guild.wars.domainmodel.BasicResult;
-import easy.guild.wars.domainmodel.Guild;
 import easy.guild.wars.scores.EnhancedResult;
 
 public class HtmlGenerator {
@@ -35,21 +30,5 @@ public class HtmlGenerator {
 			}
 			pw.flush();
 		}
-	}
-
-	@Test
-	public void test() throws IOException {
-		Parser parser = new Parser();
-		Guild guild = new Guild();
-		guild.setName("420-United");
-		Date date = new Date();
-		int rank = 4;
-
-		ClassLoader classLoader = getClass().getClassLoader();
-		File inputFile = new File(classLoader.getResource("20170608-4-420-United.txt").getFile());
-		BasicResult result = parser.parse(guild, date, rank, inputFile);
-		EnhancedResult enhancedResult = EnhancedResult.enhance(result);
-		File outputFile = new File("20170608-4-420-United-out.html");
-		writeHtml(enhancedResult, outputFile);
 	}
 }
