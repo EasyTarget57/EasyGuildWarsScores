@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div>
+  <table id="scoresTable">
+  </table>
+</div>
+
+<script>
+var headers = JSON.parse($headersString);
+var scores = JSON.parse($scoresString);
+
+var htmlHeaders = "<tr>";
+$.each(headers, function(index, h){
+	htmlHeaders += "<th>"+h+"</th>";
+});
+htmlHeaders += "</tr>";
+$("#scoresTable").append(htmlHeaders);
+
+$.each(scores,function(index,s){
+	var htmlRow = "<tr>";
+	$.each(s, function(index, tabledata){
+		htmlRow += "<td>"+tabledata+"</td>";
+	});
+	htmlRow += "</tr>";
+	$("#scoresTable").append(htmlRow);
+});
+
+
+
+</script>
+    
+</body>
+</html>
