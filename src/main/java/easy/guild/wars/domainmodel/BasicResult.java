@@ -1,11 +1,16 @@
 package easy.guild.wars.domainmodel;
 
 import java.util.Date;
+import java.util.Optional;
 
-public class BasicResult extends AbstractResult<BasicMemberResult> {
+import easy.guild.wars.streamable.util.StreamableMap;
 
-	public BasicResult(Guild guild, Date date, int rank) {
-		super(guild, date, rank, BasicMemberResult.class);
+public class BasicResult extends StreamableMap<BasicMemberResult> {
+	public Guild guild;
+	public Date date;
+	public int rank;
+
+	public Optional<BasicMemberResult> memberByName(String name) {
+		return Optional.ofNullable(get(name));
 	}
-
 }

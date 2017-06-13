@@ -1,18 +1,11 @@
 package easy.guild.wars.domainmodel;
 
-import java.util.LinkedList;
-import java.util.List;
-
-import easy.guild.wars.streamable.results.EnhancedResult;
-
-public class Guild {
+public class Account {
 	public String name;
-
-	public List<EnhancedResult> guildWarsResults = new LinkedList<>();
 
 	@Override
 	public String toString() {
-		return "Guild [name=" + name + "]";
+		return "Account [name=" + name + "]";
 	}
 
 	@Override
@@ -34,7 +27,7 @@ public class Guild {
 		if (getClass() != obj.getClass()) {
 			return false;
 		}
-		Guild other = (Guild) obj;
+		Account other = (Account) obj;
 		if (name == null) {
 			if (other.name != null) {
 				return false;
@@ -44,4 +37,5 @@ public class Guild {
 		}
 		return true;
 	}
+
 }

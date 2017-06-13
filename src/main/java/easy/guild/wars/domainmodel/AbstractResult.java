@@ -1,57 +1,13 @@
 package easy.guild.wars.domainmodel;
 
 import java.util.Date;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.stream.Collectors;
 
-public abstract class AbstractResult<T extends BasicMemberResult> {
-	private Guild guild;
-	private List<T> memberResults = new LinkedList<>();
-	private Date date;
-	private int rank;
+import easy.guild.wars.streamable.util.StreamableMap;
 
-	public AbstractResult(Guild guild, Date date, int rank, Class<T> memberScoreClass) {
-		this.guild = guild;
-		this.date = date;
-		this.rank = rank;
-	}
-
-	public Guild getGuild() {
-		return guild;
-	}
-
-	public void setGuild(Guild guild) {
-		this.guild = guild;
-	}
-
-	public List<T> getMemberResults() {
-		return memberResults;
-	}
-
-	public void setMemberResults(List<T> memberResults) {
-		this.memberResults = memberResults;
-	}
-
-	public Date getDate() {
-		return date;
-	}
-
-	public void setDate(Date date) {
-		this.date = date;
-	}
-
-	public int getRank() {
-		return rank;
-	}
-
-	public void setRank(int rank) {
-		this.rank = rank;
-	}
-
-	public int getGuildPoints() {
-		return getMemberResults().stream().collect(Collectors.summingInt(t -> t.getPoints()));
-	}
+public abstract class AbstractResult<T extends BasicMemberResult> extends StreamableMap<T> {
+	public Guild guild;
+	public Date date;
+	public int rank;
 
 	@Override
 	public String toString() {
